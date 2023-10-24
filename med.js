@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const cors = require("cors");
 const corsOptions = {
-    origin: 'http://localhost:3000',  // replace with your frontend server
+    origin: 'https://uninterested-gold-bracelet.cyclic.app/', // Update this
     optionsSuccessStatus: 204,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   };
@@ -334,6 +334,6 @@ app.post("/ask", async (req, res) => {
     }
 });
   
-app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
-});
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server running on port ${process.env.PORT || 3001}`);
+  });
