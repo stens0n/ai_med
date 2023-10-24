@@ -1,0 +1,58 @@
+/* General Button Style */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Specific styling for "Ask for AI advice" button */
+#ask-button {
+    background-color: #28a745; /* Green */
+}
+
+#ask-button:hover {
+    background-color: #218838; /* Darker Green */
+}
+
+/* Specific styling for "Reverse" button */
+#reverse-button {
+    background-color: #ffc107; /* Yellow */
+}
+
+#reverse-button:hover {
+    background-color: #e0a800; /* Darker Yellow */
+}
+
+/* Style for selected symptoms area */
+#selected-symptoms {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Area to display the AI's advice */
+#bot-answer {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for symptom buttons container */
+#symptom-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

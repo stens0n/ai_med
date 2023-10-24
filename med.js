@@ -11,13 +11,15 @@ const corsOptions = {
     optionsSuccessStatus: 204,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   };
-  
-  app.use(cors(corsOptions));
+ 
+app.use(express.static(__dirname));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname,  'index.html'));
 });
+
 
 // Define a list of medical-related keywords
 const medicalKeywords = [
