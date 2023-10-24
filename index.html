@@ -322,7 +322,8 @@ document.getElementById("reverse-button").addEventListener("click", () => {
   updateSelectedSymptoms();
 });
 
-  document.getElementById("ask-button").addEventListener("click", async () => {
+document.getElementById("ask-button").addEventListener("click", async () => {
+  try {
     // Send the array of selected symptoms to the backend
     const response = await fetch("http://localhost:3001/ask", {
       method: "POST",
@@ -332,14 +333,23 @@ document.getElementById("reverse-button").addEventListener("click", () => {
       body: JSON.stringify({ symptoms: selectedSymptoms }),
     });
 
+    if (!response.ok) {
+      console.error("Server responded with an error:", response.status, response.statusText);
+      return;
+    }
+
     // Get and display the answer
     const data = await response.json();
     document.getElementById("bot-answer").textContent = data.advice;
 
+  } catch (error) {
+    console.error("Fetch Error:", error);
+  } finally {
     // Clear the selected symptoms for the next query
     selectedSymptoms = [];
     document.getElementById("selected-symptoms").textContent = "Selected symptoms: ";
+  }
+});
 
-    
-  });
+
 </script>
