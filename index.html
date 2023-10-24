@@ -4,20 +4,32 @@
   <link rel="stylesheet" href="med.css">
 </head>
 
-<!-- Area to dynamically display buttons for selecting symptoms -->
-<div id="symptom-buttons"></div>
+<div id="main-container">
+    <!-- Area to display the AI's advice -->
+    <p id="bot-answer"></p>
 
-<!-- Area to display selected symptoms -->
-<div id="selected-symptoms">Selected symptoms: </div>
+    <div id="action-buttons">
+      <!-- Button to reverse last selected symptom -->
+      <button id="reverse-button">&#8618;</button>
 
-<!-- Button to reverse last selected symptom -->
-<button id="reverse-button">&#8618;</button>
+      <!-- Button to submit symptoms -->
+      <button id="ask-button">Ask for AI Advice</button>
+  </div>
 
-<!-- Button to submit symptoms -->
-<button id="ask-button">Ask for AI Advice</button>
+  <!-- Area to display selected symptoms -->
+  <div id="selected-symptoms">Selected symptoms: </div>
 
-<!-- Area to display the AI's advice -->
-<p id="bot-answer"></p>
+   
+
+    
+
+    
+
+    
+</div>
+
+ <!-- Area to dynamically display buttons for selecting symptoms -->
+ <div id="symptom-buttons"></div>
 
 <script>
   const medicalKeywords =  [
@@ -356,3 +368,13 @@ document.getElementById("ask-button").addEventListener("click", async () => {
 });
 
 </script>
+<footer>
+  <div class="footer-links">
+      <a href="https://www.linkedin.com/in/anthony-stenson-b33472217/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/stens0n" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://astenson.netlify.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+  </div>
+  <div class="footer-copy">
+      <span>&copy; Anthony Stenson 2023</span>
+  </div>
+</footer>
