@@ -312,7 +312,7 @@ app.post("/ask", async (req, res) => {
                 {
                   model: 'text-davinci-002',
                   prompt: prompt,
-                  max_tokens: 1000,
+                  max_tokens: 499,
                 },
                 {
                   headers: {
