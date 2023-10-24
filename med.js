@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const cors = require("cors");
 const corsOptions = {
-    origin: 'https://uninterested-gold-bracelet.cyclic.app/', // Update this
+    origin: '*', // Update this
     optionsSuccessStatus: 204,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   };
