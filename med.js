@@ -6,7 +6,6 @@ const express = require("express");
 const path = require('path');
 const app = express();
 const cors = require("cors");
-const port = 5000
 
 app.use(cors());
 app.use(express.json());
@@ -330,5 +329,6 @@ app.post("/ask", async (req, res) => {
     }
 });
   
-app.listen(process.env.PORT || port, () => console.log('Listening on port ${port}')
-);
+app.listen(3001, () => {
+  console.log("Server running on http://localhost:3001");
+});
