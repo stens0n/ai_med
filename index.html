@@ -324,7 +324,6 @@ document.getElementById("reverse-button").addEventListener("click", () => {
 
 document.getElementById("ask-button").addEventListener("click", async () => {
   try {
-    // Send the array of selected symptoms to the backend
     const response = await fetch("http://localhost:3001/ask", {
       method: "POST",
       headers: {
@@ -334,22 +333,22 @@ document.getElementById("ask-button").addEventListener("click", async () => {
     });
 
     if (!response.ok) {
-      console.error("Server responded with an error:", response.status, response.statusText);
-      return;
+      throw new Error("Server responded with an error");
     }
 
-    // Get and display the answer
     const data = await response.json();
     document.getElementById("bot-answer").textContent = data.advice;
 
   } catch (error) {
-    console.error("Fetch Error:", error);
+    if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+      alert("It seems like an ad-blocker or browser extension is blocking this request. Please disable it and try again.");
+    } else {
+      console.error("Fetch Error:", error);
+    }
   } finally {
-    // Clear the selected symptoms for the next query
     selectedSymptoms = [];
     document.getElementById("selected-symptoms").textContent = "Selected symptoms: ";
   }
 });
-
 
 </script>
