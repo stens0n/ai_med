@@ -340,7 +340,7 @@ document.getElementById("reverse-button").addEventListener("click", () => {
 
 document.getElementById("ask-button").addEventListener("click", async () => {
   try {
-    const response = await fetch("http://localhost:3001/ask", {
+    const response = await fetch("https://grumpy-plum-buckle.cyclic.app/ask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
