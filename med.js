@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const cors = require("cors");
 const corsOptions = {
-    origin: '*', // Update this
+    origin: 'https://grumpy-plum-buckle.cyclic.app', // Update this
     optionsSuccessStatus: 204,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   };
