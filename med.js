@@ -6,8 +6,13 @@ const express = require("express");
 const path = require('path');
 const app = express();
 const cors = require("cors");
-
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:3000',  // replace with your frontend server
+    optionsSuccessStatus: 204,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  };
+  
+  app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
