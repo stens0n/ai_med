@@ -6,6 +6,9 @@
 <!-- Area to display selected symptoms -->
 <div id="selected-symptoms">Selected symptoms: </div>
 
+<!-- Button to reverse last selected symptom -->
+<button id="reverse-button">&#8618;</button>
+
 <!-- Button to submit symptoms -->
 <button id="ask-button">Ask for Advice</button>
 
@@ -297,13 +300,27 @@
   // Array to hold the selected symptoms
   let selectedSymptoms = [];
 
-  function addSymptom(symptom) {
-    // Add the symptom to the array
-    selectedSymptoms.push(symptom);
-    
-    // Update the list of selected symptoms
-    document.getElementById("selected-symptoms").textContent = "Selected symptoms: " + selectedSymptoms.join(", ");
-  }
+  // Existing code for adding symptom
+function addSymptom(symptom) {
+  // Add the symptom to the array
+  selectedSymptoms.push(symptom);
+  
+  // Update the list of selected symptoms
+  updateSelectedSymptoms();
+}
+
+// New function to update the selected symptoms text
+function updateSelectedSymptoms() {
+  document.getElementById("selected-symptoms").textContent = "Selected symptoms: " + selectedSymptoms.join(", ");
+}
+
+document.getElementById("reverse-button").addEventListener("click", () => {
+  // Remove the last symptom from the array
+  selectedSymptoms.pop();
+  
+  // Update the list of selected symptoms
+  updateSelectedSymptoms();
+});
 
   document.getElementById("ask-button").addEventListener("click", async () => {
     // Send the array of selected symptoms to the backend
@@ -322,5 +339,7 @@
     // Clear the selected symptoms for the next query
     selectedSymptoms = [];
     document.getElementById("selected-symptoms").textContent = "Selected symptoms: ";
+
+    
   });
 </script>
