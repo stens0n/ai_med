@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 
-// Define a list of medical-related keywords
+/// Define a list of medical-related keywords
 const medicalKeywords = [
     'abdominal pain',
     'acid reflux',

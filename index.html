@@ -347,7 +347,7 @@ document.getElementById("ask-button").addEventListener("click", async () => {
     if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
       alert("It seems like an ad-blocker or browser extension is blocking this request. Please disable it and try again.");
     } else {
-      console.error("Fetch Error:", error);
+      console.error("Fetch Errors:", error);
     }
   } finally {
     selectedSymptoms = [];
