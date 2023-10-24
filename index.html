@@ -357,11 +357,12 @@ document.getElementById("ask-button").addEventListener("click", async () => {
 
   } catch (error) {
     if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
-      alert("It seems like an ad-blocker or browser extension is blocking this request. Please disable it and try again.");
+      alert("It seems like an ad-blocker or browser extension is blocking this request. Please disable it and try again. If the issue persists, consider adding this site to the ad-blocker's whitelist.");
     } else {
       console.error("Fetch Errors:", error);
     }
-  } finally {
+}
+ finally {
     selectedSymptoms = [];
     document.getElementById("selected-symptoms").textContent = "Selected symptoms: ";
   }
